@@ -1,0 +1,24 @@
+Project Name: Contact List Web Applicatio
+
+========Requirments========
+1. Contact List
+2. Field => Name, Phone, Email
+3. Local Storage
+4. Search Option
+5. CRUD -> Create, Update, Delete, Edit
+6. Favourite Contact List 
+7. Avatar -> First letter of Name
+
+=======Plan==========
+Single Contact Skeleton
+
+Contact = {
+    name
+    Phone
+    email 
+    uuid
+    Create, Update, Delete, Edit
+}
+
+
+
