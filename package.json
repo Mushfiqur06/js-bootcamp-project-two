@@ -1,0 +1,27 @@
+{
+  "name": "ContactApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack",
+    "serve": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5",
+    "babel": "^6.23.0",
+    "polyfill": "^0.1.0",
+    "uuid": "^8.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "repository": "https://github.com/Mushfiqur06/js-bootcamp-project-two.git",
+  "author": "Mushfiqur Niloy <mushfiqur06@gmail.com>",
+  "license": "MIT"
+}
