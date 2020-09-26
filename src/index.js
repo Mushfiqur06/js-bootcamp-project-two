@@ -1,29 +1,33 @@
-import Contact from "./data/contact";
-import Contacts from "./data/contacts";
-import contactUL from "./view/contact/contactUl";
 import { getID } from "./helper";
+import { renderContactList } from "./view/viewData";
+import Form from "./view/contactForm/index";
 
-const data = [
-  { name: "Primeasia", phone: "8578495745" },
-  { name: "Primeasia One", phone: "8578495745" },
-  { name: "Primeasia Two", phone: "8578495745" },
-  { name: "Primeasia Three", phone: "8578495745" },
-];
 const root = getID("root");
-let UL = contactUL(data);
-console.log(UL);
-root.append(UL);
-// let contacts = new Contacts({});
-// contacts.createContact(new Contact({}));
-// contacts.createContact(new Contact({}));
-// contacts.createContact(new Contact({}));
-// contacts.createContact(new Contact({}));
-// const showContactList = contacts.getContact();
-// console.log(showContactList);
+let mode = "list";
 
-//MVC -- Model View Controller
-//Model -- working with Data
-//View -- Graphical User Interface
-//Controller -- An Adapter to adapt model and view
+let newBtn = getID("newContact");
+let ouput = getID("output");
 
-//GUI + DATA
+window.onload = function () {
+  render();
+  newBtn.addEventListener("click", function () {
+    if (mode === "list") {
+      mode = "form";
+      newBtn.innerHTML = "Show All Contact";
+      render();
+    } else if (mode === "form") {
+      mode = "list";
+      newBtn.innerHTML = "Create New Contact";
+      render();
+    }
+  });
+};
+
+function render() {
+  if (mode === "list") {
+    ouput.appendChild(renderContactList());
+  } else if (mode === "form") {
+    let form = Form();
+    ouput.append(form);
+  }
+}
