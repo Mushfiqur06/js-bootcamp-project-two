@@ -8,7 +8,7 @@
 .contactItem {
   background-color: aquamarine;
   border-radius: 5px;
-  display: table;
+  display: flex;
   padding: 5px 10px;
   width: 100%;
   margin: 5px 0;
@@ -22,13 +22,11 @@
   text-align: center;
   line-height: 50px;
   color: white;
+  margin-right: 20px;
 }
-.info {
-  display: table-cell;
-  vertical-align: middle;
-}
+
 .info h2 {
-  margin-bottom: 0;
+  margin: 0;
 }
 .info p {
   margin: 0;
