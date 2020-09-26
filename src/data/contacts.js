@@ -1,34 +1,31 @@
-class Contacts {
-  constructor() {
-    this.contactList = [];
-  }
-  createContact(contact) {
-    this.contactList.push(contact);
-  }
+const contactList = [];
 
-  deleteContact(id) {
-    let index = this.getIndex(id);
-    this.contactList.splice(index, 1);
-  }
-  getContact() {
-    return this.contactList;
-  }
-  getSingleContact(id) {
-    let index = this.getIndex(id);
-    return this.contactList[index];
-  }
+export function createContact(contact) {
+  contactList.push(contact);
+}
 
-  updateContact(oldContact, changeContact) {
-    let index = this.getIndex(oldContact.id);
-    for (let i in changeContact) {
-      this.contactList[index][i] = changeContact;
-    }
-  }
+export function deleteContact(id) {
+  let index = getIndex(id);
+  contactList.splice(index, 1);
+}
 
-  getIndex(id) {
-    let index = this.contactList.findIndex((c) => c.id === id);
-    return index;
+export function getContact() {
+  return contactList;
+}
+
+export function getSingleContact(id) {
+  let index = getIndex(id);
+  return contactList[index];
+}
+
+export function updateContact(oldContact, changeContact) {
+  let index = getIndex(oldContact.id);
+  for (let i in changeContact) {
+    contactList[index][i] = changeContact;
   }
 }
 
-export default Contacts;
+export function getIndex(id) {
+  let index = contactList.findIndex((c) => c.id === id);
+  return index;
+}
